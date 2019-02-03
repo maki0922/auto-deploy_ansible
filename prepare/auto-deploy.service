@@ -1,0 +1,11 @@
+[Unit]
+Description = Auto Deploy using Ansible.
+After = ssh.service
+
+[Service]
+EnvironmentFile = /etc/default/auto-deploy
+ExecStart = /opt/hello.sh ${INVENTORY} ${EXTRA_VARS}
+Type = oneshot
+
+[Install]
+WantedBy = multi-user.target
