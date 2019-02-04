@@ -1,9 +1,9 @@
 #!/bin/sh
 
 # Install Packages
-pip install ansible
-apt install python-pip
-pip install --upgrade pip
-pip install ansible
+export LC_ALL=C
+apt install python-pip -y
+pip2 install --upgrade pip
+pip2 install ansible -y
 pip2 list
 ansible --version
