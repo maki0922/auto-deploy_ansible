@@ -4,7 +4,8 @@ After = ssh.service
 
 [Service]
 EnvironmentFile = /etc/default/auto-deploy
-ExecStart = /opt/hello.sh ${INVENTORY} ${EXTRA_VARS}
+ExecStart = /usr/local/bin/ansible-playbook -i inventories/staging/hosts auto-deploy.yml -t ${TAG} -l ${HOSTNAME}
+WorkingDirectory = /root/auto-deploy_ansible/ansible/
 Type = oneshot
 
 [Install]

@@ -1,0 +1,5 @@
+- name: debug
+  block:
+    - include: debug/debug_mes.yml
+  tags:
+    - debug

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+MY_IP=`ip addr show | grep "\sinet\s" | grep -v "127\." | awk '{print $2}' | awk -F\/ '{print $1}'`
+HOSTNAME=`hostname`
+echo -e "${MY_IP}\t${HOSTNAME}" >> /etc/hosts
+
+cp systemd/auto-deploy.service /etc/systemd/system/auto-deploy.service
+cp systemd/auto-deploy /etc/default/auto-deploy
+
+echo "HOSTNAME=\"${HOSTNAME}\"" >> /etc/default/auto-deploy

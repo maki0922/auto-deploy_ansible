@@ -1,0 +1,6 @@
+- name: auto-deploy
+  hosts: compute
+  user: root
+  become: yes
+  roles:
+    - common
