@@ -1,10 +1,10 @@
 [Unit]
 Description = Auto Deploy using Ansible.
-After = ssh.service
+After = ssh.service apt-daily-upgrade.timer apt-daily.timer
 
 [Service]
 EnvironmentFile = /etc/default/auto-deploy
-ExecStart = /usr/local/bin/ansible-playbook -i inventories/staging/hosts auto-deploy.yml -t ${TAG} -l ${HOSTNAME}
+ExecStart = /usr/local/bin/ansible-playbook -i inventories/staging/hosts ${PLAYBOOK} -t ${TAG} -l ${HOSTNAME}
 WorkingDirectory = /root/auto-deploy_ansible/ansible/
 Type = oneshot
 

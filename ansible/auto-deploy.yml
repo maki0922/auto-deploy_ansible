@@ -1,6 +1,7 @@
 - name: auto-deploy
-  hosts: compute
+  hosts: computer
   user: root
   become: yes
   roles:
     - common
+    - systemd

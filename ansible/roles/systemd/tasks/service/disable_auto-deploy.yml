@@ -1,0 +1,5 @@
+- name: disable auto-deploy service
+  systemd:
+    name: auto-deploy
+    enabled: no
+    masked: no

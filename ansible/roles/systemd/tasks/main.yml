@@ -1,0 +1,5 @@
+- name: disable auto-deploy
+  block:
+    - include: service/disable_auto-deploy.yml
+  tags:
+    - auto-deploy

@@ -8,3 +8,7 @@ cp systemd/auto-deploy.service /etc/systemd/system/auto-deploy.service
 cp systemd/auto-deploy /etc/default/auto-deploy
 
 echo "HOSTNAME=\"${HOSTNAME}\"" >> /etc/default/auto-deploy
+
+systemctl enable auto-deploy.service
+systemctl daemon-reload
+systemctl status auto-deploy.service

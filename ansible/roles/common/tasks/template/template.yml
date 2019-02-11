@@ -1,0 +1,7 @@
+- name: sample template 001
+  template:
+    src: template/tmp/template_sample001.j2
+    dest: /tmp/template_sample
+    owner: root
+    group: root
+    mode: 0644

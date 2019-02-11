@@ -1,1 +1,2 @@
-TAG="debug"
+TAG="auto-deploy"
+PLAYBOOK="auto-deploy.yml"
