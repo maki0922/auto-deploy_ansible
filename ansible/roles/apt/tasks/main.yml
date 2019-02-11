@@ -1,0 +1,5 @@
+- name: prepare apt
+  block:
+    - include: service/apt-update.yml
+  tags:
+    - auto-deploy

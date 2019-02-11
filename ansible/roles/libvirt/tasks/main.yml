@@ -1,0 +1,5 @@
+- name: install libvirt
+  block:
+    - include: package/install.yml
+  tags:
+    - auto-deploy

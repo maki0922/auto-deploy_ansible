@@ -1,0 +1,3 @@
+- name: Install libvirt-bin
+  apt:
+    name: libvirt-bin
